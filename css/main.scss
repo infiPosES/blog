@@ -1,0 +1,457 @@
+/*============================== setting*/
+@charset "utf-8";
+@keyframes spotPosition {
+	0% {margin-top: 20px;}
+	50% {margin-top: 0px;}
+	100% {margin-top: 20px;}
+}
+@keyframes moveCar {
+	0% {transform: translate(0, 0) rotate(-25deg);}
+	50% {transform: translate(-500px, 210px) rotate(-25deg);}
+	100% {transform: translate(0, 0) rotate(-25deg);}
+}
+@keyframes photoSpin {
+	0% {transform: rotate(0deg);}
+	33% {transform: rotate(-3deg);}
+	66% {transform: rotate(3deg);}
+	100% {transform: rotate(0deg);}
+}
+@mixin setBorder($color) {
+	border: 1px solid $color;
+	box-sizing: border-box;
+}
+@mixin positionA($position, $top, $left) {
+	position: $position;
+	top: $top;
+	left: $left;
+}
+@mixin contSize($width, $height) {
+	width: $width;
+	height: $height;
+}
+/*color*/
+$red: #fd413f;
+$green: #59d190;
+$yellow: #eae371;
+$mint: #49b1a7;
+$orange: #f2c149;
+$black: #555;
+/*font*/
+$english:'Lato', sans-serif;
+$korean:'Noto Sans KR', sans-serif;
+* {margin: 0px; padding: 0px;}
+a {text-decoration: none; color: $black;}
+li {list-style-type: none;}
+html, body {
+	@include contSize(100%, 100%);
+	color: $black;
+	overflow: hidden;
+}
+/* ============================= main start */
+/*bodyMain*/
+/*background*/
+//@media all and (min-width: 1200px) {	
+.bodyMain {
+	@include contSize(100%, 100%);
+	background-image: url("../img/background1.png");
+}
+/*bodyMain end*/
+/*blogName*/
+.blogName {
+	@include positionA(absolute, 41.5%, 12.5%);
+	transform: rotate(-83.5deg);
+	display: inline-block;
+	font: {
+		family: $english;
+		weight: 900;
+		size: 2vw;
+	}
+	letter-spacing: 0.2vw;
+}
+/*blogName end*/
+/*blogMap*/
+.blogMap {
+	@include contSize(100%, 100%);
+	background: {
+		image: url("../img/map2.png");	
+		position: 50% 50%;
+		size: contain;
+		repeat: no-repeat;
+	}
+	/*spot*/
+	& .mapSpot {
+		z-index: 10;
+		width: 8%;
+		object-fit: contain;
+		animation: spotPosition 2s infinite ease;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		/*spot mouseover*/
+		&:hover {
+			margin-left: -1%;
+			width: 10%;
+		}
+		/*spot mouseover end*/
+	}
+	/*spot end*/
+	/*spotMe*/
+	& .spotMe {
+		@extend .mapSpot;
+		@include positionA(absolute, 32%, 46%);
+	}	
+	/*spotMe end*/
+	/*spotEventPage*/
+	& .spotEventPage {
+		@include positionA(absolute, 45%, 25%);
+	}
+	/*spotEventPage end*/
+	/*spotContactBox*/
+	& .spotContactBox {
+		@include positionA(absolute, 52%, 39%);
+	}
+	/*spotContactBox end*/
+	/*spotMatrix*/
+	& .spotMatrix {
+		@include positionA(absolute, 48%, 60%);
+	}
+	/*spotMatrix end*/
+	/*spotShowBox*/
+	& .spotShowBox {
+		@include positionA(absolute, 10%, 56%);
+	}
+	/*spotMatrix end*/
+	/*spotwallet*/
+	& .spotWallet {
+		@include positionA(absolute, 24%, 30%);
+	}
+	/*spotwallet end*/
+	/*spotWatch*/
+	& .spotWatch {
+		@include positionA(absolute, 11%, 40%);
+	}
+	/*spotWatch end*/
+	/*spotHandC*/
+	& .spotHandC {
+		@include positionA(absolute, 22%, 68%);
+	}
+	/*spotHandC end*/
+
+	/*decoCar*/
+	& .decoCar {
+		@include positionA(absolute, 24%, 60%);
+		@include contSize(8%, 5vw);
+		background: {
+			image: url("../img/redcar.png");
+			size: contain;
+			position: 50% 50%;
+			repeat: no-repeat;
+		}
+		object-fit: contain;
+		cursor: default;
+		animation: moveCar infinite 10s ease-in-out;
+	}
+	/*decoCar end*/
+}
+/*blogMap end*/
+/*blogDesc: web developer*/
+.blogDesc {
+	@include positionA(absolute, 78%, 67.5%);
+	display: inline-block;
+	font: {
+		size: 1vw;
+		family: $english;
+	}
+	letter-spacing: 0.1vw;
+	transform: rotate(-9deg);
+}
+/*blogDesc: web developer end*/
+/*========================= description box */
+/*worksBox*/
+.worksBox {
+	z-index: 20;
+	@include positionA (absolute, 100%, 0);
+	@include contSize(100%, 100%);
+	overflow: hidden;
+	background-color: rgba(255,255,255,0.7);
+	/*closeBtn*/
+	& .closeBtn {
+		display: inline-block;
+		@include positionA(absolute, 1vw, calc(99% - 4vw));
+		@include contSize(4vw, 4vw);
+		text-align: center;
+		line-height: 4vw;
+		transition: all 0.5s ease;
+		cursor: pointer;
+		&:hover {
+			color: $orange;
+			transform: rotate(180deg);
+		}
+	}
+	/*closeBtn end*/
+	/*worksContent*/
+	/*img*/
+	& .worksContImg {
+		float: left;
+		@include contSize(60%, 100%);
+		background: {
+			image: url("../img/m_contactBook.png");
+			position: 50% 50%;
+			size: contain;
+			repeat: no-repeat;
+		}
+	}
+	/*description*/
+	& .worksContDesc {
+		float: right;
+		background-color: white;
+		@include contSize(40%, 100%);
+		&::after {content: ""; clear: both;}
+		& .worksDescList {
+			padding: {
+				top: 6%;
+				left: 5%;
+			}
+			box-sizing: border-box;
+			@include contSize(100%, 100%);
+			font-family: $korean;
+			letter-spacing: 0.2vw;
+			& .workDesc {
+				margin-top: 1.5vw;
+			}
+			& .descTitle {
+				width: 100%;
+				font: {
+					size: 3vw;
+					weight: bold;
+				}
+			}
+			& .descSkills {
+				width: 100%;
+				font-size: 1.5vw;
+				& .skillIcon {
+					@include contSize(7vw, 7vw);
+				}
+			}
+			& .descColor {
+				width: 100%;
+				font-size: 1.5vw;
+				& .wColor {
+					display: inline-block;
+					margin-left: 1vw;
+					@include contSize(3vw, 3vw);
+					border: 2px solid $black;
+					box-sizing: border-box;
+					border-radius: 50%;
+				}
+				/*포트폴리오별 사용 color*/
+				/*contactbook color*/
+				& .wColor1 {
+					margin-top: 1vw; 
+					background-color: #00f260;
+				}
+				& .wColor2 {background-color: #0575e6;}
+				/*eventpage color*/
+				& .wColor3 {
+					margin-top: 1vw; 
+					background-color: #e9625f;}
+				& .wColor4 {background-color: #f3222a;}
+				& .wColor5 {background-color: #3d1b00;}
+				& .wColor6 {background-color: #fae6e6;}
+				& .wColor7 {background-color: #fbc90a;}
+				/*matrix color*/
+				& .wColor8 {
+					margin-top: 1vw; 
+					background-color: #92ff00;
+				}
+				& .wColor9 {background-color: #4d72e0;}
+				/*showbox color*/
+				& .wColor10 {
+					margin-top: 1vw; 
+					background-color: #ffb70c;}
+				}
+				/*wallet color*/
+				& .wColor11 {
+					margin-top: 1vw; 
+					background-color: #fff;}
+				& .wColor12 {background-color: #1a191b;}
+				/*wallet color*/
+				& .wColor13 {
+					margin-top: 1vw; 
+					background-color: #f5f5f5;}
+				& .wColor14 {background-color: #9bcffe;}
+				& .wColor15 {background-color: #00a0ea;}
+				& .wColor16 {background-color: #26211f;}
+				/*wallet color*/
+				& .wColor17 {
+					margin-top: 1vw; 
+					background-color: #ececec;}
+				& .wColor18 {background-color: #282828;}
+			& .btnBox {
+				margin-top: 3vw;
+				& .worksBtn {
+					display: inline-block;
+					margin-right: 2vw;
+					@include contSize (10vw, 3.5vw);
+					font: {
+						family: $korean;
+						size: 1.2vw;
+					}
+					text-align: center;
+					line-height: 3.3vw;
+					border: none;
+					border-radius: 0.5vw;
+					border: 3px solid $orange;
+					box-sizing: border-box;
+					background-color: $orange;
+					color: white;
+					cursor: pointer;
+					transition: all 0.2s ease;
+					&:hover {
+						background-color: white;
+						color: orange;
+					}
+				}
+			}
+		}
+	}
+	/*worksContent end*/
+}
+/*worksBox end*/
+/*========================= about box */
+/*aboutBox*/
+.aboutBox {
+	z-index: 30;
+	@include positionA (absolute, 100%, 0);
+	@include contSize(100%, 100%);
+	background: {
+		image: url("../img/aboutBackground.png");
+		repeat: no-repeat;
+		size: cover;
+		position: 50% 50%;
+	}
+	/*closeBtn*/
+	& .closeBtn {
+		display: inline-block;
+		z-index: 39;
+		@include positionA(absolute, 1vw, calc(99% - 4vw));
+		@include contSize(4vw, 4vw);
+		text-align: center;
+		line-height: 4vw;
+		transition: all 0.5s ease;
+		cursor: pointer;
+		&:hover {
+			color: $orange;
+			transform: rotate(180deg);
+		}
+	}
+	/*closeBtn end*/
+	/*aboutIntro*/
+	& .aboutIntro {
+		margin-left: 1%;
+		box-sizing: border-box;
+		font: {
+			family: $korean;
+			size: 3.5vw;
+			weight: normal;
+		}
+		-webkit-text-stroke: 1px $mint;
+		color: transparent;
+	}
+	& .aboutProfile {
+		@include positionA(absolute, 30%, 44%);
+		@include contSize(25.5vw, 14vw);
+		font: {
+			family: $korean;
+			size: 2vw;
+		}
+		& .profileName {
+			font-weight: bold;
+			& span {font-size: 1vw;}
+		}
+		& .profileDesc {
+			color: $green;
+		}
+		/*skillGage*/
+		& .skillGage {
+			margin-top:1vw;
+			border-radius: 1vw;
+			@include setBorder($black);
+			@include contSize(100%, 2.5vw);
+			overflow: hidden;
+			/*스킬 아이콘 클릭 시 클래스 추가*/
+			& .inGage {
+				width: 0%;
+				height: 100%;
+				border-radius: 1vw;
+				background-color: $red;
+				transition: all 0.5s linear;
+				text-indent: 0.2vw;
+				line-height:2.5vw;
+				color: white;
+				font: {
+					family: $korean;
+					size: 1vw;
+				}
+			}
+		}
+	/*skillGage end*/
+	}
+	/*aboutIntro end*/
+	/*skill*/
+	& .skillList {
+		& .skills {
+			@include contSize(10vw, 2.5vw);
+			border-radius: 1vw;
+			text-align: center;
+			line-height: 2.2vw;
+			font: {
+				size: 1vw;
+				family: $korean;
+				weight: bold;
+			}
+			border: 2px solid $black;
+			box-sizing: border-box;
+			cursor: pointer;
+			background-color: white;
+			transition: all 0.1s linear;
+			&:hover {
+				color: white;
+			}
+		}
+		& .skPs:hover {background-color: $mint;}
+		& .skAi:hover {background-color: $yellow;}
+		& .skHtml:hover {background-color: $orange;}
+		& .skCss:hover {background-color: $mint;}
+		& .skScss:hover {background-color: $red;}
+		& .skJs:hover {background-color: $yellow;}
+		& .skJq:hover {background-color: $mint;}
+		& .skJson:hover {background-color: $yellow;}
+		& .skPhp:hover {background-color: $mint;}
+		& .skmySql:hover {background-color: $green;}
+		& .skAjax:hover {background-color: $red;}
+		& .skNodejs:hover {background-color: $green;}
+		& .skVuejs:hover {background-color: $mint;}
+		& .skPug:hover {background-color: $orange;}
+	}
+	& .skillLeft {
+		@include positionA(absolute, 37.2%, 25%);
+	}
+	& .skillRight {
+		@include positionA(absolute, 47.5%, 78%);
+	}
+	/*skill end*/
+	/*myPhoto*/
+	& .myPhoto {
+		@include positionA(absolute, 3%, 72%);
+		@include contSize(20vw, 20vw);
+		background: {
+			image: url('../img/eunsook.png');
+			position: 50% 50%;
+			repeat: no-repeat;
+			size: contain;
+		}
+		animation: photoSpin 2s infinite linear;
+	}
+	/*myPhoto end*/
+}
+/*aboutBox end*/

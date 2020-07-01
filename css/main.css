@@ -1,0 +1,465 @@
+@charset "UTF-8";
+/*============================== setting*/
+@keyframes spotPosition {
+  0% {
+    margin-top: 20px; }
+  50% {
+    margin-top: 0px; }
+  100% {
+    margin-top: 20px; } }
+@keyframes moveCar {
+  0% {
+    transform: translate(0, 0) rotate(-25deg); }
+  50% {
+    transform: translate(-500px, 210px) rotate(-25deg); }
+  100% {
+    transform: translate(0, 0) rotate(-25deg); } }
+@keyframes photoSpin {
+  0% {
+    transform: rotate(0deg); }
+  33% {
+    transform: rotate(-3deg); }
+  66% {
+    transform: rotate(3deg); }
+  100% {
+    transform: rotate(0deg); } }
+/*color*/
+/*font*/
+* {
+  margin: 0px;
+  padding: 0px; }
+
+a {
+  text-decoration: none;
+  color: #555; }
+
+li {
+  list-style-type: none; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  color: #555;
+  overflow: hidden; }
+
+/* ============================= main start */
+/*bodyMain*/
+/*background*/
+.bodyMain {
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/background1.png"); }
+
+/*bodyMain end*/
+/*blogName*/
+.blogName {
+  position: absolute;
+  top: 41.5%;
+  left: 12.5%;
+  transform: rotate(-83.5deg);
+  display: inline-block;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-size: 2vw;
+  letter-spacing: 0.2vw; }
+
+/*blogName end*/
+/*blogMap*/
+.blogMap {
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/map2.png");
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  /*spot*/
+  /*spot end*/
+  /*spotMe*/
+  /*spotMe end*/
+  /*spotEventPage*/
+  /*spotEventPage end*/
+  /*spotContactBox*/
+  /*spotContactBox end*/
+  /*spotMatrix*/
+  /*spotMatrix end*/
+  /*spotShowBox*/
+  /*spotMatrix end*/
+  /*spotwallet*/
+  /*spotwallet end*/
+  /*spotWatch*/
+  /*spotWatch end*/
+  /*spotHandC*/
+  /*spotHandC end*/
+  /*decoCar*/
+  /*decoCar end*/ }
+  .blogMap .mapSpot, .blogMap .spotMe {
+    z-index: 10;
+    width: 8%;
+    object-fit: contain;
+    animation: spotPosition 2s infinite ease;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    /*spot mouseover*/
+    /*spot mouseover end*/ }
+    .blogMap .mapSpot:hover, .blogMap .spotMe:hover {
+      margin-left: -1%;
+      width: 10%; }
+  .blogMap .spotMe {
+    position: absolute;
+    top: 32%;
+    left: 46%; }
+  .blogMap .spotEventPage {
+    position: absolute;
+    top: 45%;
+    left: 25%; }
+  .blogMap .spotContactBox {
+    position: absolute;
+    top: 52%;
+    left: 39%; }
+  .blogMap .spotMatrix {
+    position: absolute;
+    top: 48%;
+    left: 60%; }
+  .blogMap .spotShowBox {
+    position: absolute;
+    top: 10%;
+    left: 56%; }
+  .blogMap .spotWallet {
+    position: absolute;
+    top: 24%;
+    left: 30%; }
+  .blogMap .spotWatch {
+    position: absolute;
+    top: 11%;
+    left: 40%; }
+  .blogMap .spotHandC {
+    position: absolute;
+    top: 22%;
+    left: 68%; }
+  .blogMap .decoCar {
+    position: absolute;
+    top: 24%;
+    left: 60%;
+    width: 8%;
+    height: 5vw;
+    background-image: url("../img/redcar.png");
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    cursor: default;
+    animation: moveCar infinite 10s ease-in-out; }
+
+/*blogMap end*/
+/*blogDesc: web developer*/
+.blogDesc {
+  position: absolute;
+  top: 78%;
+  left: 67.5%;
+  display: inline-block;
+  font-size: 1vw;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 0.1vw;
+  transform: rotate(-9deg); }
+
+/*blogDesc: web developer end*/
+/*========================= description box */
+/*worksBox*/
+.worksBox {
+  z-index: 20;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.7);
+  /*closeBtn*/
+  /*closeBtn end*/
+  /*worksContent*/
+  /*img*/
+  /*description*/
+  /*worksContent end*/ }
+  .worksBox .closeBtn {
+    display: inline-block;
+    position: absolute;
+    top: 1vw;
+    left: calc(99% - 4vw);
+    width: 4vw;
+    height: 4vw;
+    text-align: center;
+    line-height: 4vw;
+    transition: all 0.5s ease;
+    cursor: pointer; }
+    .worksBox .closeBtn:hover {
+      color: #f2c149;
+      transform: rotate(180deg); }
+  .worksBox .worksContImg {
+    float: left;
+    width: 60%;
+    height: 100%;
+    background-image: url("../img/m_contactBook.png");
+    background-position: 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat; }
+  .worksBox .worksContDesc {
+    float: right;
+    background-color: white;
+    width: 40%;
+    height: 100%; }
+    .worksBox .worksContDesc::after {
+      content: "";
+      clear: both; }
+    .worksBox .worksContDesc .worksDescList {
+      padding-top: 6%;
+      padding-left: 5%;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      font-family: "Noto Sans KR", sans-serif;
+      letter-spacing: 0.2vw;
+      /*wallet color*/
+      /*wallet color*/
+      /*wallet color*/ }
+      .worksBox .worksContDesc .worksDescList .workDesc {
+        margin-top: 1.5vw; }
+      .worksBox .worksContDesc .worksDescList .descTitle {
+        width: 100%;
+        font-size: 3vw;
+        font-weight: bold; }
+      .worksBox .worksContDesc .worksDescList .descSkills {
+        width: 100%;
+        font-size: 1.5vw; }
+        .worksBox .worksContDesc .worksDescList .descSkills .skillIcon {
+          width: 7vw;
+          height: 7vw; }
+      .worksBox .worksContDesc .worksDescList .descColor {
+        width: 100%;
+        font-size: 1.5vw;
+        /*포트폴리오별 사용 color*/
+        /*contactbook color*/
+        /*eventpage color*/
+        /*matrix color*/
+        /*showbox color*/ }
+        .worksBox .worksContDesc .worksDescList .descColor .wColor {
+          display: inline-block;
+          margin-left: 1vw;
+          width: 3vw;
+          height: 3vw;
+          border: 2px solid #555;
+          box-sizing: border-box;
+          border-radius: 50%; }
+        .worksBox .worksContDesc .worksDescList .descColor .wColor1 {
+          margin-top: 1vw;
+          background-color: #00f260; }
+        .worksBox .worksContDesc .worksDescList .descColor .wColor2 {
+          background-color: #0575e6; }
+        .worksBox .worksContDesc .worksDescList .descColor .wColor3 {
+          margin-top: 1vw;
+          background-color: #e9625f; }
+        .worksBox .worksContDesc .worksDescList .descColor .wColor4 {
+          background-color: #f3222a; }
+        .worksBox .worksContDesc .worksDescList .descColor .wColor5 {
+          background-color: #3d1b00; }
+        .worksBox .worksContDesc .worksDescList .descColor .wColor6 {
+          background-color: #fae6e6; }
+        .worksBox .worksContDesc .worksDescList .descColor .wColor7 {
+          background-color: #fbc90a; }
+        .worksBox .worksContDesc .worksDescList .descColor .wColor8 {
+          margin-top: 1vw;
+          background-color: #92ff00; }
+        .worksBox .worksContDesc .worksDescList .descColor .wColor9 {
+          background-color: #4d72e0; }
+        .worksBox .worksContDesc .worksDescList .descColor .wColor10 {
+          margin-top: 1vw;
+          background-color: #ffb70c; }
+      .worksBox .worksContDesc .worksDescList .wColor11 {
+        margin-top: 1vw;
+        background-color: #fff; }
+      .worksBox .worksContDesc .worksDescList .wColor12 {
+        background-color: #1a191b; }
+      .worksBox .worksContDesc .worksDescList .wColor13 {
+        margin-top: 1vw;
+        background-color: #f5f5f5; }
+      .worksBox .worksContDesc .worksDescList .wColor14 {
+        background-color: #9bcffe; }
+      .worksBox .worksContDesc .worksDescList .wColor15 {
+        background-color: #00a0ea; }
+      .worksBox .worksContDesc .worksDescList .wColor16 {
+        background-color: #26211f; }
+      .worksBox .worksContDesc .worksDescList .wColor17 {
+        margin-top: 1vw;
+        background-color: #ececec; }
+      .worksBox .worksContDesc .worksDescList .wColor18 {
+        background-color: #282828; }
+      .worksBox .worksContDesc .worksDescList .btnBox {
+        margin-top: 3vw; }
+        .worksBox .worksContDesc .worksDescList .btnBox .worksBtn {
+          display: inline-block;
+          margin-right: 2vw;
+          width: 10vw;
+          height: 3.5vw;
+          font-family: "Noto Sans KR", sans-serif;
+          font-size: 1.2vw;
+          text-align: center;
+          line-height: 3.3vw;
+          border: none;
+          border-radius: 0.5vw;
+          border: 3px solid #f2c149;
+          box-sizing: border-box;
+          background-color: #f2c149;
+          color: white;
+          cursor: pointer;
+          transition: all 0.2s ease; }
+          .worksBox .worksContDesc .worksDescList .btnBox .worksBtn:hover {
+            background-color: white;
+            color: orange; }
+
+/*worksBox end*/
+/*========================= about box */
+/*aboutBox*/
+.aboutBox {
+  z-index: 30;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/aboutBackground.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  /*closeBtn*/
+  /*closeBtn end*/
+  /*aboutIntro*/
+  /*aboutIntro end*/
+  /*skill*/
+  /*skill end*/
+  /*myPhoto*/
+  /*myPhoto end*/ }
+  .aboutBox .closeBtn {
+    display: inline-block;
+    z-index: 39;
+    position: absolute;
+    top: 1vw;
+    left: calc(99% - 4vw);
+    width: 4vw;
+    height: 4vw;
+    text-align: center;
+    line-height: 4vw;
+    transition: all 0.5s ease;
+    cursor: pointer; }
+    .aboutBox .closeBtn:hover {
+      color: #f2c149;
+      transform: rotate(180deg); }
+  .aboutBox .aboutIntro {
+    margin-left: 1%;
+    box-sizing: border-box;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 3.5vw;
+    font-weight: normal;
+    -webkit-text-stroke: 1px #49b1a7;
+    color: transparent; }
+  .aboutBox .aboutProfile {
+    position: absolute;
+    top: 30%;
+    left: 44%;
+    width: 25.5vw;
+    height: 14vw;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 2vw;
+    /*skillGage*/
+    /*skillGage end*/ }
+    .aboutBox .aboutProfile .profileName {
+      font-weight: bold; }
+      .aboutBox .aboutProfile .profileName span {
+        font-size: 1vw; }
+    .aboutBox .aboutProfile .profileDesc {
+      color: #59d190; }
+    .aboutBox .aboutProfile .skillGage {
+      margin-top: 1vw;
+      border-radius: 1vw;
+      border: 1px solid #555;
+      box-sizing: border-box;
+      width: 100%;
+      height: 2.5vw;
+      overflow: hidden;
+      /*스킬 아이콘 클릭 시 클래스 추가*/ }
+      .aboutBox .aboutProfile .skillGage .inGage {
+        width: 0%;
+        height: 100%;
+        border-radius: 1vw;
+        background-color: #fd413f;
+        transition: all 0.5s linear;
+        text-indent: 0.2vw;
+        line-height: 2.5vw;
+        color: white;
+        font-family: "Noto Sans KR", sans-serif;
+        font-size: 1vw; }
+  .aboutBox .skillList .skills {
+    width: 10vw;
+    height: 2.5vw;
+    border-radius: 1vw;
+    text-align: center;
+    line-height: 2.2vw;
+    font-size: 1vw;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: bold;
+    border: 2px solid #555;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: white;
+    transition: all 0.1s linear; }
+    .aboutBox .skillList .skills:hover {
+      color: white; }
+  .aboutBox .skillList .skPs:hover {
+    background-color: #49b1a7; }
+  .aboutBox .skillList .skAi:hover {
+    background-color: #eae371; }
+  .aboutBox .skillList .skHtml:hover {
+    background-color: #f2c149; }
+  .aboutBox .skillList .skCss:hover {
+    background-color: #49b1a7; }
+  .aboutBox .skillList .skScss:hover {
+    background-color: #fd413f; }
+  .aboutBox .skillList .skJs:hover {
+    background-color: #eae371; }
+  .aboutBox .skillList .skJq:hover {
+    background-color: #49b1a7; }
+  .aboutBox .skillList .skJson:hover {
+    background-color: #eae371; }
+  .aboutBox .skillList .skPhp:hover {
+    background-color: #49b1a7; }
+  .aboutBox .skillList .skmySql:hover {
+    background-color: #59d190; }
+  .aboutBox .skillList .skAjax:hover {
+    background-color: #fd413f; }
+  .aboutBox .skillList .skNodejs:hover {
+    background-color: #59d190; }
+  .aboutBox .skillList .skVuejs:hover {
+    background-color: #49b1a7; }
+  .aboutBox .skillList .skPug:hover {
+    background-color: #f2c149; }
+  .aboutBox .skillLeft {
+    position: absolute;
+    top: 37.2%;
+    left: 25%; }
+  .aboutBox .skillRight {
+    position: absolute;
+    top: 47.5%;
+    left: 78%; }
+  .aboutBox .myPhoto {
+    position: absolute;
+    top: 3%;
+    left: 72%;
+    width: 20vw;
+    height: 20vw;
+    background-image: url("../img/eunsook.png");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: photoSpin 2s infinite linear; }
+
+/*aboutBox end*/
+
+/*# sourceMappingURL=main.css.map */
